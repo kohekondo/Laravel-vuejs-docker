@@ -18,5 +18,22 @@ window.Vue = require('vue');
 Vue.component('example', require('./components/ExampleComponent.vue'));
 
 const app = new Vue({
-    el: '#app'
-});
+    el: '#app',
+    data: {
+        message: 'Hello kohe'
+    }
+})
+
+const app2 = new Vue({
+    el: '#app-2',
+    data: {
+        message: 'You loaded this page on' + new Date().toLocaleString()
+    }
+})
+
+const app3 = new Vue({
+   el: '#app-3',
+    data: {
+        seen: false
+    }
+})

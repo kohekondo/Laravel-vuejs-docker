@@ -17,7 +17,18 @@
     </head>
     <body>
         <div id="app">
-          <example></example>
+          {{-- <example></example> --}}
+          @{{ message }}
+        </div>
+        <div id="app-2">
+            <span v-bind:title="message">
+                Hover
+            </span>
+        </div>
+        <div id="app-3">
+            <span v-if="seen">
+                show message
+            </span>
         </div>
     </body>
 
