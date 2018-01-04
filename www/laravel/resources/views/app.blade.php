@@ -30,7 +30,26 @@
                 show message
             </span>
         </div>
-    </body>
+        <div id="app-4">
+            <ol>
+                <li v-for="todo in todos">
+                    @{{ todo.text }}
+                </li>
+            </ol>
+        </div>
+        <div id="app-5">
+            <p>@{{ message }}</p>
+            <button v-on:click="reverseMessage">Reverse Message</button>
+        </div>
+        <div id="app-6">
+            <p>@{{ message }}</p>
+            <input v-model="message">
+        </div>
+        <div id="app-7">
+            <ol>
+                <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+            </ol>
+        </div>
 
-    <script src="js/app.js"></script>
+    <script src=" {{ mix('js/app.js') }} "></script>
 </html>

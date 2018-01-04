@@ -11,9 +11,15 @@
 |
 */
 
-Route::get('/{any}', function () {
-    return view('app');
-})->where('any', '.*');
+//middleware
+Route::group(['middleware' => ['web']], function()
+{
+    Route::get('/{any}', function () {
+        return view('app');
+    })->where('any', '.*');
+    //Route::get('/', 'TestController@index');
+});
+
 
 Route::get('/', function () {
     return view('welcome');

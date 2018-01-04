@@ -988,6 +988,19 @@ window.Vue = __webpack_require__(35);
  */
 
 Vue.component('example', __webpack_require__(38));
+//Vue.component('todo-item', require('./components/TodoItem.vue'));
+
+Vue.component('todo-item', {
+    props: ['todo'],
+    template: '<li> {{ todo.text }} </li>'
+});
+
+var app7 = new Vue({
+    el: '#app-7',
+    data: {
+        groceryList: [{ id: 0, text: 'VegeTables' }, { id: 1, text: 'Cheese' }, { id: 2, text: 'Whatever else humans are supposed to eat' }]
+    }
+});
 
 var app = new Vue({
     el: '#app',
@@ -1007,6 +1020,32 @@ var app3 = new Vue({
     el: '#app-3',
     data: {
         seen: false
+    }
+});
+
+var app4 = new Vue({
+    el: '#app-4',
+    data: {
+        todos: [{ text: 'kohe1' }, { text: 'kohe2' }, { text: 'kohe3' }, { text: 'kohe4' }]
+    }
+});
+
+var app5 = new Vue({
+    el: '#app-5',
+    data: {
+        message: 'Hello Vue.js!'
+    },
+    methods: {
+        reverseMessage: function reverseMessage() {
+            this.message = this.message.split('').reverse().join('');
+        }
+    }
+});
+
+var app6 = new Vue({
+    el: '#app-6',
+    data: {
+        message: 'Hello'
     }
 });
 
